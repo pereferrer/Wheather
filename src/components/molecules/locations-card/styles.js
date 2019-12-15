@@ -5,13 +5,16 @@ import {StyleSheet, Dimensions} from 'react-native';
 export const {width, height} = Dimensions.get('window');
 
 export default StyleSheet.create({
-  container: {},
+  container: {
+    height: 100,
+    justifyContent: 'center',
+    alignItems: 'center',
+    flex: 1,
+  },
   image: {width: 50, height: 50, resizeMode: 'cover'},
   name: {
     color: 'white',
     fontSize: 16,
     textTransform: 'uppercase',
-    flex: 1,
   },
-  
 });

@@ -5,15 +5,18 @@ import {Actions} from 'react-native-router-flux';
 
 const mapStateToProps = state => {
   return {
-    locationsList: state.locations.list,
+    locationList: state.locations.list,
+    locationsTotal: state.locations.total,
+    locationsOffset: state.locations.offset,
+    locationsFetching: state.locations.isFetching,
+
   };
 };
 
 const mapDispatchToProps = (dispatch, props) => {
   return {
-    fetchLocationsList: () => dispatch(locationsActions.fetchLocationsList()),
-    
-
+    initList: () => dispatch(locationsActions.initList()),
+    fetchNextPage: () => dispatch(locationsActions.fetchNextPage()),
     onLocationSelected: location => {
       dispatch(locationsActions.updateItem(location));
       Actions.LocationsDetail({title: location.name});

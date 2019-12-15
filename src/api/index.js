@@ -12,6 +12,3 @@ export const getLocations = () => {
   return instance.get(url);
 };
 
-
-
-

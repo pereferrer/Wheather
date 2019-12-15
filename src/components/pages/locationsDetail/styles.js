@@ -1,24 +1,21 @@
-import {StyleSheet} from 'react-native';
-import colors from '../../../assets/colors';
+import {StyleSheet, Dimensions} from 'react-native';
+
+// const widht = Dimensions.get('window').width;
+// const height = Dimensions.get('window').height;
+export const {width, height} = Dimensions.get('window');
 
 export default StyleSheet.create({
   container: {
+    backgroundColor: 'green',
+    height: 100,
+    alignItems: 'center',
     flex: 1,
-    backgroundColor: colors.main,
   },
-  image: {
-    width: 50,
-    height: 50,
-    resizeMode: 'cover',
-  },
-  infoBox: {flexDirection: 'row', marginHorizontal: 20, marginTop: 20},
-  label: {flex: 1, color: colors.white},
-  value: {color: colors.white, fontWeight: '500'},
-  editButton: {marginTop: 40, marginHorizontal: 20},
-  deleteButton: {
+  image: {width: 50, height: 50, resizeMode: 'cover', marginTop:20},
+  name: {
+    color: 'white',
+    fontSize: 16,
+    textTransform: 'uppercase',
     marginTop: 20,
-    marginBottom: 40,
-    marginHorizontal: 20,
-    backgroundColor: 'rgba(255,0,0,0.2)',
   },
 });

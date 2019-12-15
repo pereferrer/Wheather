@@ -3,6 +3,7 @@ import {Router, Scene, Actions} from 'react-native-router-flux';
 import {
   Location,
   LocationsDetail,
+  LocationsAdd,
 } from '../../pages';
 import colors from '../../../assets/colors';
 import { locations } from '../../../redux';
@@ -12,7 +13,20 @@ class Routes extends Component {
     return (
       <Router>
         <Scene key="root">
-          <Scene key="Location" component={Location} hideNavBar={true} />
+          <Scene key="Location" 
+          component={Location} 
+          navigationBarStyle={{backgroundColor: colors.navBar, }}
+          hideNavBar={false}
+          backButtonTextStyle={{color: colors.white}}
+          backButtonTintColor={colors.white}
+          backTitleEnabled={true}
+          title ={'Localizaciones'}
+          tintColor='white'
+          onRight={() => Actions.LocationsAdd()}
+          rightTitle={'Crear'}
+            
+          
+          />
           <Scene
             key="LocationsDetail"
             component={LocationsDetail}
@@ -20,6 +34,18 @@ class Routes extends Component {
             backButtonTextStyle={{color: colors.white}}
             backButtonTintColor={colors.white}
             backTitleEnabled={true}
+            tintColor='white'
+          />
+
+          <Scene
+            key="LocationsAdd"
+            component={LocationsAdd}
+            navigationBarStyle={{backgroundColor: colors.navBar}}
+            backButtonTextStyle={{color: colors.white}}
+            backButtonTintColor={colors.white}
+            backTitleEnabled={true}
+            tintColor='white'
+            title ={'Añadir Localidad'}
           />
         </Scene>
       </Router>
